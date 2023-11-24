@@ -48,6 +48,7 @@ public class SedeServiceImpl implements SedeService {
     public Sede actualizarSede(Sede sede) {
 
         var SedeF = sedeRepository.findById(sede.getId()).get();
+        SedeF.setCodigoS(sede.getCodigoS());
         SedeF.setDistrito(sede.getDistrito());
         SedeF.setDireccion(sede.getDireccion());
         SedeF.setIndicaciones(sede.getIndicaciones());
@@ -65,6 +66,13 @@ public class SedeServiceImpl implements SedeService {
 
         sedeRepository.delete(SedeF);
 
+    }
+
+    @Override
+    public Sede findByCodigoS(Long codigoS) {
+        
+        return sedeRepository.findByCodigoS(codigoS).orElseThrow(() -> new EntityNotFoundException("Sede no encontrado con el codigo"+codigoS.toString()));
+        
     }
 
 }

@@ -32,6 +32,15 @@ public class SedeController {
         
     }
     
+    @GetMapping("/findByCodigoS/{codigoS}")
+    
+    public ResponseEntity<Sede> findByCodigoS(@PathVariable Long codigoS) {
+        
+        return new ResponseEntity<>(sedeService.findByCodigoS(codigoS), HttpStatus.OK);
+        
+    }
+    
+    
     @GetMapping("/buscarPorId/{id}")
     
     public ResponseEntity<Sede> buscarPorId(@PathVariable Long id) {

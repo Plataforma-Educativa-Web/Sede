@@ -7,5 +7,6 @@ import pe.cibertec.ProyectoFinal.ApiSede.entity.Sede;
 public interface SedeRepository extends JpaRepository<Sede, Long> {
 
     Optional<Sede> findByDistrito(String distrito);
+    Optional<Sede> findByCodigoS(Long codigoS);
 
 }

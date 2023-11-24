@@ -8,7 +8,9 @@ public interface SedeService {
     public List<Sede> findAll();
 
     public Sede buscarPorId(Long id);
-    
+
+    public Sede findByCodigoS(Long codigoS);
+
     public Sede findByDistrito(String distrito);
 
     public Sede agregarSede(Sede sede);
@@ -16,5 +18,5 @@ public interface SedeService {
     public Sede actualizarSede(Sede sede);
 
     public void eliminarSede(Long id);
- 
+
 }

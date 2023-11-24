@@ -15,6 +15,7 @@ public class Sede {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     
     private Long id;
+    private Long codigoS;
     private String distrito;
     private String direccion;
     private String indicaciones;
